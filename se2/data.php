@@ -10,8 +10,8 @@ function normalize_title($title)
 function get_book($title)
 {
     $books = [
-        "stardust" => [
-            "title" => "stardust",
+        "little women" => [
+            "title" => "Little Women",
             "rating" => 4.5
         ],
 
