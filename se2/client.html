@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Rating Service 2</title>
+</head>
+
+<body>
+
+    <h1>Book Rating Lookup</h1>
+
+    <h3>Service 2: JSON Book Response</h3>
+
+    <p>Enter a book title to find its rating.</p>
+
+    <h3>Book Title Input Rules</h3>
+
+    <ul>
+        <li>Capitalization does not matter.</li>
+        <li>Spaces between words are allowed.</li>
+        <li>Extra spaces at the beginning or end are ignored.</li>
+        <li>Multiple spaces are treated as one space.</li>
+        <li>Spelling must match an existing book title.</li>
+    </ul>
+
+    <p>Example: stardust = stardust = stardust</p>
+
+    <p>
+        Available books: stardust, The Great Gatsby,
+        The Hunger Games, Pride and Prejudice, The Hobbit.
+    </p>
+
+    <input type="text" id="title"
+        placeholder="Enter book title">
+
+    <button onclick="searchBook()">Search</button>
+
+    <h3>Result:</h3>
+
+    <pre id="result"></pre>
+
+    <script>
+
+        async function searchBook() {
+
+            const title =
+                document.getElementById("title").value.trim();
+
+            if (!title) {
+                document.getElementById("result").textContent =
+                    "Please enter a book title.";
+                return;
+            }
+
+            const url =
+                "api.php?title=" + encodeURIComponent(title);
+
+            try {
+
+                const response = await fetch(url);
+
+                const result = await response.json();
+
+                document.getElementById("result").textContent =
+                    JSON.stringify(result, null, 4);
+
+            }
+            catch (error) {
+
+                document.getElementById("result").textContent =
+                    "Unable to contact the server.";
+
+            }
+        }
+
+    </script>
+
+</body>
+</html>

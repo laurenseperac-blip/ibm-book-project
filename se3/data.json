@@ -1,0 +1,24 @@
+{
+    "books": [
+        {
+            "title": "stardust",
+            "rating": 4.5
+        },
+        {
+            "title": "The Great Gatsby",
+            "rating": 4.2
+        },
+        {
+            "title": "The Hunger Games",
+            "rating": 4.7
+        },
+        {
+            "title": "Pride and Prejudice",
+            "rating": 4.8
+        },
+        {
+            "title": "The Hobbit",
+            "rating": 4.6
+        }
+    ]
+}
